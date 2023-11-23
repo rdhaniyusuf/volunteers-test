@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>volunteers-test</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+		integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<header class="header">
+		<div class="header-logo">
+			rdhaniy_
+		</div>
+		<nav class="navbar">
+			<ul class="navbar-list">
+				<li class="navbar-item"><a href="#join">Join Us</a></li>
+				<li class="navbar-item"><a href="#about">About</a></li>
+				<li class="navbar-item"><a href="#search" id="openSearchModal">Search</a></li>
+			</ul>
+		</nav>
+		<div class="navbar-toggler">
+			<i class="fa-solid fa-bars-staggered"></i>
+		</div>
+	</header>
+	<!-- Modal search -->
+	<div class="searchModal-container" id="searchModal">
+		<div class="search-card">
+			<div class="close-search-btn">
+				<i class="fa-regular fa-circle-xmark"></i>
+			</div>
+			<h4 class="search-title">Search Your Information</h4>
+			<div class="search-wrapper">
+				<form class="search-form" action="" name="submit-search" id="search-form">
+					<div class="sf-container">
+						<input class="sf-input" type="text" name="searchId" id="searchId" placeholder="" autocomplete="false">
+						<label for="searchId">id/Email</label>
+					</div>
+					<div class="sf-container">
+						<button type="submit" class="sf-btn" id="btn-submit-search">
+							<span>Search</span>
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal Info -->
+
+	<div class="infoModal-container" id="infoModal">
+		<div class="info-card">
+			<div class="close-info-btn">
+				<i class="fa-regular fa-circle-xmark"></i>
+			</div>
+
+			<div class="info-wrapper">
+				<div class="image-info">
+					<img id="imageDisplay" alt="Base64 Image" srcset="">
+				</div>
+				<div class="name-info">
+					<h2><span id="name"></span></h2>
+				</div>
+				<div class="contact-info">
+					<h3><span id="location"></span></h3>
+				</div>
+				<div class="barcode-info">
+					<img id="qrCodeDisplay" alt="QR Code">
+				</div>
+
+				<div class="print-info">
+					<button>
+						<span>Print Card</span>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Join Us -->
+	<div class="container">
+		<div class="join-card" id="join">
+			<h4 class="join-title">Join Us</h4>
+			<div class="join-wrapper">
+				<form action="" class="join-form" name="submit-join-us" id="join-form">
+					<div class="input-container">
+						<input type="text" class="jf-input" id="userId" name="userId" placeholder=""
+							autocomplete="false" required disabled>
+						<label for="userId">Id</label>
+					</div>
+					<div class="input-container">
+						<input type="text" class="jf-input" id="name" name="name" placeholder="" autocomplete="false"
+							required>
+						<label for="name">Name</label>
+					</div>
+					<div class="input-container">
+						<input type="email" class="jf-input" id="contact" name="contact" placeholder=""
+							autocomplete="false" required="@">
+						<label for="contact">Contact</label>
+					</div>
+					<div class="input-container">
+						<input type="text" class="jf-input" id="location" name="location" placeholder=""
+							autocomplete="false" required>
+						<label for="location">Address</label>
+					</div>
+					<div class="input-container">
+						<input type="file" class="jf-input" id="image" name="image" accept="image/*" required>
+						<label for="image">Upload Image (Max 2MB, 300px x 400px)</label>
+					</div>
+					<div class="input-container">
+						<button type="submit" class="jf-btn" id="btn-submit">
+							<span>submit</span>
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!-- About Us -->
+	<div class="container">
+		<div class="about-card" id="about">
+			<div class="about-left">
+				<img src="assets/img/SitReadingDoodle.svg" alt="">
+			</div>
+			<div class="about-right">
+				<h2>About Us</h2>
+				<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt nemo animi quod amet optio fugiat
+					incidunt modi, alias quas obcaecati nisi expedita doloribus odit natus a tempore qui! Consectetur,
+					possimus?</p>
+			</div>
+		</div>
+	</div>
+
+
+	<footer>
+		Rahmadhani Yusuf
+	</footer>
+
+	<script src="script.js"></script>
+</body>
+
+</html>

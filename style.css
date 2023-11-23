@@ -1,0 +1,444 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap');
+
+
+:root {
+
+	--primary: #2d6fe1;
+	--alert-warning: #c63249;
+	--alert-success: rgba(17, 238, 172, 0.761);
+
+	--text-light: #e6e6e6;
+	--text-dark: #090909;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	color: var(--text-dark);
+	text-decoration: none;
+	font-size: 24px;
+	list-style: none;
+	font-family: 'Open Sans', sans-serif;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #f1f1f1;
+	/* background-image: url("assets/img/SitReadingDoodle.svg"); */
+	background-repeat: no-repeat;
+	background-size: 100%;
+	margin: 0;
+	/* padding: 0; */
+	max-width: 100vw;
+	max-height: 100vh;
+	overflow-x: auto;
+}
+
+.header {
+	position: absolute;
+	z-index: 2;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: center;
+	justify-content: space-between;
+	/* border: 1px solid rgb(0, 17, 255); */
+	padding:1% 5% 1%;
+	width: 100%;
+}
+
+.header.sticky {
+	position: fixed;
+	background-color: var(--primary);
+
+}
+
+.header-logo {
+	font-size: 1.2rem;
+	font-weight: 600;
+	/* border: 1px solid; */
+}
+
+/* .navbar {
+	border: 1px solid;
+} */
+
+.navbar-list {
+	display: flex;
+	flex-direction: row;
+	font-size: .8rem;
+	font-weight: 500;
+	gap: 1rem;
+	list-style: none;
+}
+
+.navbar-toggler {
+	display: none;
+	font-size: 1.2rem;
+	font-weight: 600;
+	/* border: 1px solid; */
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	/* border: 1px solid; */
+	padding: 0;
+
+}
+
+
+/* join card form*/
+.join-card {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: fit-content;
+	border-radius: 10px;
+	background-image: url('assets/img/techny-email-marketing-and-newsletter.gif');
+	background-repeat: no-repeat;
+	background-position: 50%;
+	background-size: contain;
+	position: relative;
+	padding: 2%;
+	margin-top: 5%;
+
+	& .join-title {
+		font-size: 1.2rem;
+		font-weight: 800;
+	}
+
+	& .join-wrapper {
+
+		& .join-form {
+			display: flex;
+			flex-direction: column;
+			gap: 1rem;
+
+			& .input-container {
+				position: relative;
+				width: 100%;
+				display: flex;
+				flex-direction: column;
+
+				& .jf-input {
+					background-color: transparent;
+					backdrop-filter: blur(2px);
+					color: var(--purple);
+					border-radius: 10px;
+					padding: 4% 2%;
+					font-size: .8rem;
+					margin-block-end: 15px;
+				}
+
+				& .jf-input:focus+label,
+				.jf-input:not(:placeholder-shown)+label {
+					top: -2%;
+					margin-left: .2rem;
+					font-size: .5rem;
+					font-weight: 800;
+					text-decoration: 2px underline solid var(--red);
+				}
+
+				& .jf-input::placeholder {
+					color: inherit;
+				}
+
+				& label {
+					position: absolute;
+					display: flex;
+					flex-wrap: wrap;
+					width: 100%;
+					height: 100%;
+					transition: 0.3s ease all;
+					pointer-events: none;
+					font-size: .8rem;
+					font-weight: 600;
+					align-content: flex-start;
+					align-items: center;
+					flex-direction: column;
+					top: 20%;
+					margin-left: 1rem;
+				}
+
+				& .jf-btn {
+					background-color: var(--primary);
+					border-radius: 10px;
+					border: .2rem solid var(--primary);
+
+					& span {
+						font-size: .8rem;
+						font-weight: 600;
+						padding: 0;
+					}
+				}
+			}
+		}
+	}
+
+
+}
+
+/* about card*/
+
+.about-card {
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	width: 100%;
+	justify-content: space-between;
+
+	& .about-left {
+		position: relative;
+		width: 45%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 1% 2% 1%;
+
+		& img {
+			width: 75%;
+			background-image: url('assets/img/blobanimation\ \(1\).svg');
+			background-position: 50%;
+			background-repeat: no-repeat;
+		}
+	}
+
+	& .about-right {
+		display: flex;
+		flex-direction: column;
+		width: 45%;
+		padding: 1% 2% 1%;
+		margin: 0;
+		gap: 1rem;
+
+		& h2 {
+			width: fit-content;
+			font-size: 1.4rem;
+			font-weight: 700;
+			margin: 0;
+
+		}
+
+		& p {
+			width: fit-content;
+			font-size: 1rem;
+			text-align: justify;
+			font-weight: 500;
+			margin: 0;
+		}
+
+	}
+}
+
+/* modal search */
+
+.searchModal-container {
+	display: none;
+	position: fixed;
+	backdrop-filter: blur(5px);
+	overflow-x: hidden;
+	flex-direction: column;
+	align-items: center;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+
+	& .search-card {
+		top: 10%;
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		border: .2rem solid #2d6fe1;
+		border-radius: 10px;
+		background-color: rgba(127, 121, 248, 0.266);
+		padding: 2% 5% 2%;
+		justify-content: center;
+		align-items: center;
+		background-image: url('assets/img/juicy-woman-is-looking-for-perfect-candidate-1.gif');
+		background-repeat: no-repeat;
+		background-position: top;
+		background-size: 50%;
+
+		& .close-search-btn {
+			position: absolute;
+			top: 1%;
+			right: 2%;
+		}
+
+		& .search-title {
+			font-size: 1.2rem;
+			font-weight: 600;
+		}
+
+		& .search-wrapper {
+			& .search-form {
+				display: flex;
+				flex-direction: column;
+				gap: 1rem;
+
+				& .sf-container {
+					position: relative;
+					width: 100%;
+					display: flex;
+					flex-direction: column;
+
+					& .sf-input {
+						background-color: transparent;
+						backdrop-filter: blur(2px);
+						color: var(--purple);
+						border-radius: 10px;
+						padding: 4% 2%;
+						font-size: 1.2rem;
+						margin-block-end: 15px;
+					}
+
+					& .sf-input:focus+label,
+					.sf-input:not(:placeholder-shown)+label {
+						top: -2%;
+						margin-left: .2rem;
+						font-size: .5rem;
+						font-weight: 800;
+						text-decoration: 2px underline solid var(--red);
+					}
+
+					& .sf-input::placeholder {
+						color: inherit;
+					}
+
+					& label {
+						position: absolute;
+						display: flex;
+						flex-wrap: wrap;
+						width: 100%;
+						height: 100%;
+						transition: 0.3s ease all;
+						pointer-events: none;
+						font-size: .8rem;
+						font-weight: 600;
+						align-content: flex-start;
+						align-items: center;
+						flex-direction: column;
+						top: 20%;
+						margin-left: 1rem;
+					}
+
+					& .sf-btn {
+						background-color: var(--primary);
+						border-radius: 10px;
+						border: .2rem solid var(--primary);
+
+						& span {
+							font-size: .8rem;
+							font-weight: 600;
+							padding: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+/* Modal Info */
+
+.infoModal-container {
+	display: none;
+	position: fixed;
+	backdrop-filter: blur(5px);
+	overflow-x: hidden;
+	flex-direction: column;
+	align-items: center;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+
+	& .info-card {
+		top: 10%;
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		border: .2rem solid #2d6fe1;
+		border-radius: 10px;
+		background-color: rgba(127, 121, 248, 0.266);
+		padding: 2% 5% 2%;
+		justify-content: center;
+		align-items: center;
+
+		& .close-info-btn {
+			position: absolute;
+			top: 1%;
+			right: 2%;
+		}
+
+		& .info-wrapper {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			flex-wrap: nowrap;
+			gap: .5rem;
+
+			& .image-info {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: center;
+
+				& img {
+					width: 75%;
+					border-radius: 10px;
+				}
+			}
+
+			& .name-info h2 {
+				font-size: .9rem;
+				font-weight: 700;
+			}
+
+			& .contact-info h3 {
+				font-size: .7rem;
+				font-weight: 600;
+			}
+
+			& .barcode-info {
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				align-items: center;
+				background-color: #fff;
+				box-sizing: content-box;
+
+				& img {
+					width: 50%;
+				}
+			}
+
+			& .print-info button{
+				padding:5%;
+				width: max-content;
+				background-color: #2d6fe1;
+				border-radius: 5px;
+				border: none;
+			}
+		}
+
+	}
+}
+
+/* footer */
+footer {
+	bottom: 0%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	font-size: .6rem;
+	font-weight: 600;
+	color: #818181;
+}
